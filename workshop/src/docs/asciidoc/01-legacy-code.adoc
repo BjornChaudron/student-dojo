@@ -88,22 +88,22 @@ This is called the "extract local variable" refactoring.
 
 === Invert `if`-statement
 
-.The code below has 2 dependencies: `quality` and `name`
+.The code below has 2 dependencies: `amount` and `name`
 [source,java]
 ----
-if (quality > 0) {
+if (amount > 0) {
     if (!name.equals("Sulfuras, Hand of Ragnaros")) {
-        quality = quality - 1;
+        amount = amount - 1;
     }
 }
 ----
 
-.By simply inverting the if statements, we’re able to group the instructions about quality
+.By simply inverting the if statements, we’re able to group the instructions about amount
 [source,java]
 ----
 if (!name.equals("Sulfuras, Hand of Ragnaros")) {
-    if (quality > 0) {
-        quality = quality - 1;
+    if (amount > 0) {
+        amount = amount - 1;
     }
 }
 ----

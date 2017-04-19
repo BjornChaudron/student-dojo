@@ -1083,21 +1083,21 @@ we find 3 dependencies, namely: <code>places</code>, <code>currentPlayer</code>,
 <div class="sect3">
 <h4 id="invert-code-if-code-statement">6.2.2. Invert <code>if</code>-statement</h4>
 <div class="listingblock">
-<div class="title">The code below has 2 dependencies: <code>quality</code> and <code>name</code></div>
+<div class="title">The code below has 2 dependencies: <code>amount</code> and <code>name</code></div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">if</span> (quality &gt; <span class="integer">0</span>) {
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">if</span> (amount &gt; <span class="integer">0</span>) {
     <span class="keyword">if</span> (!name.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sulfuras, Hand of Ragnaros</span><span class="delimiter">&quot;</span></span>)) {
-        quality = quality - <span class="integer">1</span>;
+        amount = amount - <span class="integer">1</span>;
     }
 }</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">By simply inverting the if statements, we’re able to group the instructions about quality</div>
+<div class="title">By simply inverting the if statements, we’re able to group the instructions about amount</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">if</span> (!name.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">Sulfuras, Hand of Ragnaros</span><span class="delimiter">&quot;</span></span>)) {
-    <span class="keyword">if</span> (quality &gt; <span class="integer">0</span>) {
-        quality = quality - <span class="integer">1</span>;
+    <span class="keyword">if</span> (amount &gt; <span class="integer">0</span>) {
+        amount = amount - <span class="integer">1</span>;
     }
 }</code></pre>
 </div>
@@ -1330,7 +1330,7 @@ to guide refactoring efforts towards clean code and object oriented concepts.</p
 As you know,
 we are a small inn with a prime location in a prominent city run by a friendly innkeeper named Allison.
 We also buy and sell only the finest goods.
-Unfortunately, our goods are constantly degrading in quality as they approach their sell by date.
+Unfortunately, our goods are constantly degrading in amount as they approach their sell by date.
 We have a system in place that updates our inventory for us.
 It was developed by a no-nonsense type named Leeroy,
 who has moved on to new adventures.
@@ -2236,7 +2236,7 @@ and to learn other people in the business.</p>
 and go to the suggested meetups.</p>
 </div>
 <div class="paragraph">
-<p>Some known high-quality meetups,
+<p>Some known high-amount meetups,
 possibly with specific topics:</p>
 </div>
 <div class="ulist">

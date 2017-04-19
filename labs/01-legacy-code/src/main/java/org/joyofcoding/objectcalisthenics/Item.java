@@ -2,10 +2,10 @@ package org.joyofcoding.objectcalisthenics;
 
 public class Item {
     private String name;
-    private int sellIn;
-    private int quality;
+    SellIn sellIn;
+    Quality quality;
 
-    public Item(String name, int sellIn, int quality) {
+    public Item(String name, SellIn sellIn, Quality quality) {
         this.name = name;
         this.quality = quality;
         this.sellIn = sellIn;
@@ -16,18 +16,59 @@ public class Item {
     }
 
     public int getSellIn() {
-        return sellIn;
+        return sellIn.getAmount();
     }
 
-    public void setSellIn(int sellIn) {
+    public void setSellIn(SellIn sellIn) {
         this.sellIn = sellIn;
     }
 
     public int getQuality() {
-        return quality;
+        return quality.getAmount();
     }
 
-    public void setQuality(int quality) {
+    public void setQuality(Quality quality) {
         this.quality = quality;
     }
+
+    public boolean hasName(String comparative) {
+        return getName().equals(comparative);
+    }
+
+    public void decreaseSellIn() {
+        sellIn.decreaseSellIn();
+    }
+
+    public void increaseQuality() {
+        quality.increaseQuality();
+    }
+
+    public void decreaseQuality() {
+        quality.decreaseQuality();
+    }
+
+    public void expire() {
+        quality.expire();
+    }
+
+    public boolean hasQuality() {
+        return quality.hasQuality();
+    }
+
+    public boolean hasNotMaximumQuality() {
+        return quality.hasNotMaximumQuality();
+    }
+
+    public boolean hasSellInLessThanElevenDays() {
+        return sellIn.hasSellInLessThanElevenDays();
+    }
+
+    public boolean hasSellInLessThanSixDays() {
+        return sellIn.hasSellInLessThanSixDays();
+    }
+
+    public boolean hasExpired() {
+        return sellIn.hasExpired();
+    }
+
 }
