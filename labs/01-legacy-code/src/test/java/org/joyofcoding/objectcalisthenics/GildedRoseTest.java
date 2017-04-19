@@ -1,6 +1,8 @@
 package org.joyofcoding.objectcalisthenics;
 
 import org.joyofcoding.objectcalisthenics.assertions.ItemsAssert;
+import org.joyofcoding.objectcalisthenics.updaters.BackstagePassUpdater;
+import org.joyofcoding.objectcalisthenics.updaters.HandUpdater;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,7 +41,7 @@ public class GildedRoseTest {
     @Test
     public void after_one_day_with_sufuras_having_sellIn_lesser_than_zero_and_quality_greater_than_zero() {
         items = new ArrayList<Item>();
-        items.add(new Item("Sulfuras, Hand of Ragnaros", new SellIn(-1), new Quality( 1)));
+        items.add(new Item("Sulfuras, Hand of Ragnaros", new SellIn(-1), new Quality( 1), new HandUpdater()));
         repeatUpdateQuality(1);
 
         ItemsAssert.assertThat(items)
@@ -117,6 +119,6 @@ public class GildedRoseTest {
     private Item aRandomBackstagePass() {
         Quality quality = randomQuality();
         SellIn sellIn = randomSellIn();
-        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
+        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality, new BackstagePassUpdater());
     }
 }

@@ -13,31 +13,35 @@ public class Quality {
         this.amount = amount;
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
     public void increaseQuality() {
-        setAmount(getAmount() + 1 );
-    }
-
-    public void decreaseQuality() {
-        setAmount(getAmount() - 1);
-    }
-
-    public boolean hasQuality() {
-        return getAmount() > MINIMUM_QUALITY;
+        if (hasNotMaximumQuality()) {
+            setAmount(getAmount() + 1 );
+        }
     }
 
     public boolean hasNotMaximumQuality() {
         return getAmount() < MAX_QUALITY;
     }
 
+    public void decreaseQuality() {
+        if (hasQuality()) {
+            setAmount(getAmount() - 1);
+        }
+    }
+
+    public boolean hasQuality() {
+        return getAmount() > MINIMUM_QUALITY;
+    }
+
     public void expire() {
         setAmount(0);
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }

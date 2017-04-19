@@ -10,14 +10,6 @@ public class SellIn {
         this.amount = amount;
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
     public void decreaseSellIn() {
         setAmount(getAmount() - 1);
     }
@@ -32,5 +24,13 @@ public class SellIn {
 
     public boolean hasSellInLessThanSixDays() {
         return getAmount() < 6;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }
