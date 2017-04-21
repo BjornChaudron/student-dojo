@@ -18,11 +18,11 @@ public class SellIn {
         return getAmount() < 0;
     }
 
-    public boolean hasSellInLessThanElevenDays() {
+    public boolean isLessThanElevenDays() {
         return getAmount() < 11;
     }
 
-    public boolean hasSellInLessThanSixDays() {
+    public boolean isLessThanSixDays() {
         return getAmount() < 6;
     }
 

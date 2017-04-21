@@ -13,6 +13,8 @@ public class BrieUpdater implements UpdateStrategy {
 
         quality.increaseQuality();
 
+        sellIn.decreaseSellIn();
+
         if (sellIn.hasExpired()) {
             quality.increaseQuality();
         }

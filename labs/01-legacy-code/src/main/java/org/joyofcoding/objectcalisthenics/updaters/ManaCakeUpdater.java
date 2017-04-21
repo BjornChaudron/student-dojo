@@ -10,7 +10,7 @@ public class ManaCakeUpdater implements UpdateStrategy {
 
     @Override
     public void update(SellIn sellIn, Quality quality) {
-        quality.increaseQuality();
+        quality.decreaseQuality();
 
         sellIn.decreaseSellIn();
 

@@ -18,12 +18,17 @@ public class Item {
     public String getName() {
         return name;
     }
-    public SellIn getSellIn() {
-        return sellIn;
+
+    public int getSellIn() {
+        return sellIn.getAmount();
     }
 
-    public Quality getQuality() {
-        return quality;
+    public void setSellIn(SellIn sellIn) {
+        this.sellIn = sellIn;
+    }
+
+    public int getQuality() {
+        return quality.getAmount();
     }
 
     public void setQuality(Quality quality) {
@@ -32,6 +37,10 @@ public class Item {
 
     public UpdateStrategy getUpdateStrategy() {
         return updateStrategy;
+    }
+
+    public void update() {
+        updateStrategy.update(sellIn, quality);
     }
 
 

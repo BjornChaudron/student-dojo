@@ -12,15 +12,20 @@ public class BackstagePassUpdater implements UpdateStrategy {
     @Override
     public void update(SellIn sellIn, Quality quality) {
 
-        if (sellIn.hasSellInLessThanElevenDays()) {
+        quality.increaseQuality();
+
+        if (sellIn.isLessThanElevenDays()) {
             quality.increaseQuality();
         }
 
-        if (sellIn.hasSellInLessThanSixDays()) {
+        if (sellIn.isLessThanSixDays()) {
             quality.increaseQuality();
         }
 
         sellIn.decreaseSellIn();
 
+        if (sellIn.hasExpired()) {
+            quality.expire();
+        }
     }
 }
